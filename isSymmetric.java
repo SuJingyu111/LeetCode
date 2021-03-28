@@ -30,7 +30,7 @@ public class isSymmetric {
                     rightStack.add(rightNode.left);
                 }
             }
-             return true;
+            return true;
         }
     }
 }
