@@ -31,7 +31,7 @@ public class InOrderTraversal {
         }
 
         public List<Integer> inorderTraversalIterative(TreeNode root) {
-            List<Integer> result = new ArrayList();
+            List<Integer> result = new ArrayList<Integer>();
             Deque<TreeNode> nodeStack = new LinkedList<TreeNode>();
             while (root != null || !nodeStack.isEmpty()) {
                 while (root != null) {
