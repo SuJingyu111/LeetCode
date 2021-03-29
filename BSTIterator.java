@@ -2,6 +2,7 @@ import java.util.*;
 
 public class BSTIterator {
     private Deque<TreeNode>  traverseList = new LinkedList<TreeNode>();
+    private Set<TreeNode> traversedSet = new HashSet<TreeNode>();
 
     public BSTIterator(TreeNode root) {
         traverseList.addFirst(root);
@@ -9,12 +10,10 @@ public class BSTIterator {
     
     public int next() {
         TreeNode cursor = traverseList.getFirst().left;
-        traverseList.getFirst().left = null;
-        while (cursor != null) {
+        while (cursor != null && !traversedSet.contains(cursor)) {
             traverseList.addFirst(cursor);
-            TreeNode temp = cursor.left;
-            cursor.left = null;
-            cursor = temp;
+            traversedSet.add(cursor);
+            cursor = cursor.left;
         }
         cursor = traverseList.removeFirst();
         int val = cursor.val;
