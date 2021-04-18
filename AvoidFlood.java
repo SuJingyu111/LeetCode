@@ -2,7 +2,7 @@ public class AvoidFlood {
     class Solution {
         public int[] avoidFlood(int[] rains) {
             Map<Integer, Integer> encountered = new HashMap<>(); //下过雨的池塘号, 池塘下雨日期;
-            TreeMap<Integer, Integer> bucketMap = new TreeMap<>(); //某个桶可以抽干的最早日期, 桶尺寸;
+            TreeMap<Integer, Integer> bucketMap = new TreeMap<>(); //某个桶可以抽干的最 早日期, 桶尺寸;
             int length = rains.length;
             int[] ans = new int[length];
             for (int i = 0; i < length; i++) {
