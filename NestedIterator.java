@@ -30,7 +30,7 @@ public class NestedIterator {
             }
         }
     
-        @Override
+         @Override
         public boolean hasNext() {
             while (nestedIterator.hasNext()) {
                 dfs(nestedIterator.next());
